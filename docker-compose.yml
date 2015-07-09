@@ -5,7 +5,7 @@ nginx:
     links:
       - "php"
     volumes:
-      - ~/opt:/opt
+      - ~/data:/data
 
 php:
     build: ./php
@@ -17,14 +17,14 @@ php:
       - "redis"
       - "gearman"
     volumes:
-      - ~/opt:/opt
+      - ~/data:/data
 
 mysql:
     build: ./mysql
     ports:
       - "3306:3306"
     volumes:
-      - ~/opt/data/mysql:/var/lib/mysql
+      - ~/data/mysql:/var/lib/mysql
     environment:
       MYSQL_ROOT_PASSWORD: 123456
 
@@ -43,4 +43,4 @@ gearman:
     ports:
       - "4730:4730"
     volumes:
-      - ~/opt:/opt
+      - ~/data:/data

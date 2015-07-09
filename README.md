@@ -77,20 +77,20 @@ service docker restart
 
 准备基础的目录，由于Mac下默认允许挂载/Users/的文件，因此本套方案将系统文件挂载位置强制设置为`~/opt/`
 
-- ~/opt/data   存放MySQL数据库，Elastic数据
-- ~/opt/htdocs 项目代码
-- ~/opt/log    存放所有输出Log
+- ~/data   存放MySQL数据库，Elastic数据
+- ~/data/web 项目代码
+- ~/data/log    存放所有输出Log
 
 创建这些目录:
 
 ```
-mkdir ~/opt ~/opt/data ~/opt/data/mysql ~/opt/data/elasticsearch ~/opt/log ~/opt/log/nginx ~/opt/log/php ~/opt/htdocs
+mkdir ~/data ~/data ~/data/mysql ~/data/elasticsearch ~/data/log ~/data/log/nginx ~/data/log/php ~/data/web
 ```
 
 Clone本项目
 
 ```
-cd ~/opt/htdocs
+cd ~/data/web
 git clone https://github.com/EvaEngine/Dockerfiles.git
 cd Dockerfiles
 ```
@@ -123,7 +123,7 @@ sudo vi /etc/hosts
 构建EvaSkeleton项目文件
 
 ```
-cd ~/opt/htdocs
+cd ~/data/web
 git clone https://github.com/EvaEngine/EvaSkeleton.git
 cd EvaSkeleton
 cp config/config.local.dev.php config/config.local.php
