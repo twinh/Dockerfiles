@@ -15,7 +15,6 @@ php:
       - "mysql"
       - "memcache"
       - "redis"
-      - "gearman"
     volumes:
       - ~/data:/data
 
