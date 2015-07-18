@@ -44,6 +44,10 @@ ADD php-fpm.conf    /usr/local/etc/php-fpm.conf
 ADD composer.phar /usr/local/bin/composer
 RUN chmod 755 /usr/local/bin/composer
 
+# PHPUnit
+ADD phpunit.phar /usr/local/bin/phpunit
+RUN chmod 755 /usr/local/bin/phpunit
+
 WORKDIR /data
 
 # Write Permission

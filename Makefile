@@ -15,6 +15,7 @@ dl:
 	wget https://pecl.php.net/get/memcache-2.2.7.tgz -O php/memcache.tgz
 	wget https://pecl.php.net/get/xhprof-0.9.4.tgz -O php/xhprof.tgz
 	wget https://getcomposer.org/composer.phar -O php/composer.phar
+	wget https://phar.phpunit.de/phpunit.phar -O php/phpunit.phar
 
 build:
 	make build-nginx
