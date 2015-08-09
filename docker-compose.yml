@@ -36,3 +36,11 @@ redis:
     build: ./redis
     ports:
       - "6379:6379"
+
+jenkins:
+    build: ./jenkins
+    ports:
+      - "8080:8080"
+      - "50000:50000"
+    volumes:
+      - ~/data/jenkins:/var/jenkins_home
