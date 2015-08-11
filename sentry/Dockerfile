@@ -11,7 +11,7 @@ RUN apt-get -qq update && DEBIAN_FRONTEND=noninteractive \
 
 RUN pip install -i http://pypi.douban.com/simple/ --trusted-host pypi.douban.com -U sentry[mysql]
 
-ADD sentry.conf.py /root/.sentry/sentry.conf.py
+ADD sentry.conf.py /home/user/.sentry/sentry.conf.py
 
 RUN apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* /wheels/*
 
