@@ -1,0 +1,23 @@
+redis:
+    build: ./redis
+    ports:
+      - "6379:6379"
+
+mysql:
+    build: ./mysql
+    ports:
+      - "3306:3306"
+    volumes:
+      - ~/data/mysql:/var/lib/mysql
+
+sentry:
+    build: ./sentry
+    ports:
+      - "8080"
+    links:
+      - mysql
+      - redis
+    volumes:
+      - ~/data:/data
+    entrypoint: sentry
+    command: start --noinput
