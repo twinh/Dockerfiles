@@ -24,8 +24,6 @@ mysql:
       - "3306:3306"
     volumes:
       - ~/data/mysql:/var/lib/mysql
-    environment:
-      MYSQL_ROOT_PASSWORD: 123456
 
 memcache:
     build: ./memcache
@@ -36,11 +34,3 @@ redis:
     build: ./redis
     ports:
       - "6379:6379"
-
-jenkins:
-    build: ./jenkins
-    ports:
-      - "8080:8080"
-      - "50000:50000"
-    volumes:
-      - ~/data/jenkins:/var/jenkins_home
