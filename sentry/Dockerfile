@@ -17,5 +17,3 @@ RUN apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* /wheels/*
 
 USER user
 EXPOSE 9001
-
-CMD sentry start && sentry celery worker -B
