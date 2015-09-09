@@ -1,0 +1,6 @@
+jenkins:
+    build: ./jenkins
+    volumes:
+      - ~/jenkins:/var/jenkins_home
+    ports:
+      - "8080:8080"
