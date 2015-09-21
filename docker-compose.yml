@@ -34,3 +34,6 @@ redis:
     build: ./redis
     ports:
       - "6379:6379"
+
+node:
+    build: ./node
