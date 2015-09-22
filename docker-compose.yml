@@ -34,3 +34,12 @@ redis:
     build: ./redis
     ports:
       - "6379:6379"
+
+node:
+    build: ./node
+    tty: true
+    stdin_open: true
+    volumes:
+      - ~/data:/data
+    extra_hosts:
+      - "dev.m.com:192.168.59.103"
