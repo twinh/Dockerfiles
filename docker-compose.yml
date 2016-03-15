@@ -2,6 +2,7 @@ nginx:
     build: ./nginx
     ports:
       - "80:80"
+      - "443:443"
     links:
       - "php"
     volumes:
@@ -17,6 +18,8 @@ php:
       - "redis"
     volumes:
       - ~/data:/data
+    extra_hosts:
+          - "dev.vchang8.com:192.168.59.103"
 
 mysql:
     build: ./mysql
@@ -42,4 +45,4 @@ node:
     volumes:
       - ~/data:/data
     extra_hosts:
-      - "dev.m.com:192.168.59.103"
+      - "dev.vchang8.com:192.168.59.103"
