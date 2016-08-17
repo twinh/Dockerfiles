@@ -1,12 +1,12 @@
-FROM node:0.12
+FROM node:6.4
 
-RUN npm install -g cnpm
+RUN npm install -g cnpm --registry=https://registry.npm.taobao.org
 
 RUN cnpm install -g gulp
 
 RUN cnpm install -g bower
 
-RUN cnpm install -g phantomjs
+RUN cnpm install -g phantomjs-prebuilt
 
 RUN cnpm install -g casperjs
 
